@@ -1,0 +1,780 @@
+/* General Body and Container Styling */
+body {
+    font-family: 'League Spartan', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #223d3c; /* Dark Grey/Cyan */
+    color: #223d3c; /* Default text color for light backgrounds */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-size: 16px; /* Base font size */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Ensure all elements inherit box-sizing */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.container {
+    width: 100%;
+    height: 100vh; /* Take full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #223d3c; /* Consistent background */
+}
+
+/* Hidden Pages */
+.page-hidden {
+    display: none !important; /* Forces hide */
+}
+
+/* --- Login Page Specific Styling --- */
+.login-page {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Occupy full container */
+}
+
+.login-page .left-panel {
+    flex: 1; /* Takes equal space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    padding: 50px; /* Adjusted padding */
+    background-color: #223d3c;
+    color: #f8f3f2; /* Light text for dark background */
+    text-align: center; /* Ensures text is centered */
+    /* Removed padding-left to allow true centering */
+}
+
+.login-page .app-title {
+    font-size: 4.5em; /* Larger font size for title */
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1; /* Tighter line height */
+}
+
+.login-page .app-tagline {
+    font-size: 1.6em; /* Larger tagline */
+    margin-bottom: 5px; /* Reduced space below tagline to bring subtitle closer */
+    font-weight: 400; /* Regular weight as per image */
+}
+
+.login-page .app-subtitle { /* New style for the added subtitle */
+    font-size: 1.2em; /* Adjust font size as needed */
+    color: #e0d9d8; /* Slightly lighter color for subtitle */
+    margin-top: 0; /* No top margin */
+    margin-bottom: 70px; /* Space below subtitle before image/nothing */
+}
+
+/* Removed .login-page .hero-image as the image is removed from HTML */
+
+.login-page .right-panel {
+    flex: 1; /* Takes equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f3f2; /* Light Red background */
+    padding: 20px; /* Minimal padding for this wrapper */
+}
+
+.login-page .form-container {
+    background-color: #f8f3f2; /* Matches panel background */
+    padding: 60px 70px; /* Generous padding for content inside form */
+    border-radius: 15px; /* More rounded corners as per design */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Stronger, clearer shadow */
+    width: 100%; /* Take full width of its flex item */
+    max-width: 480px; /* Defined max-width for consistency */
+    text-align: center;
+}
+
+.login-page .form-container h2 {
+    color: #223d3c;
+    margin-bottom: 45px; /* Increased margin for better separation */
+    font-weight: 700;
+    font-size: 2.4em; /* Larger heading */
+    line-height: 1; /* Tighter line height */
+}
+
+.login-page .input-group {
+    margin-bottom: 25px; /* Consistent spacing between input groups */
+    text-align: left;
+}
+
+.login-page .input-group label {
+    display: block;
+    margin-bottom: 10px; /* Space between label and input */
+    font-weight: 700;
+    color: #223d3c;
+    font-size: 1.1em;
+}
+
+.login-page .input-group input {
+    width: 100%; /* Full width within its container */
+    padding: 16px 15px; /* Larger padding for inputs */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 8px; /* Rounded input fields */
+    font-size: 1.1em; /* Clearer input text */
+    color: #223d3c; /* Input text color */
+}
+
+/* Buttons General Styling (Adjusted for consistency across pages) */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 18px; /* Generous padding for all buttons */
+    margin-top: 25px; /* Default margin above buttons */
+    border: none;
+    border-radius: 8px; /* Rounded button corners */
+    cursor: pointer;
+    font-size: 1.2em; /* Prominent button text */
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.primary-btn {
+    background-color: #223d3c;
+    color: #f8f3f2;
+}
+
+.primary-btn:hover {
+    background-color: #1a2f2e; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.secondary-btn {
+    background-color: #f8f3f2; /* Matches page background */
+    color: #223d3c; /* Dark text for light button */
+    border: 2px solid #223d3c; /* Prominent border */
+    margin-top: 15px; /* Tighter spacing for secondary button below primary */
+}
+
+.secondary-btn:hover {
+    background-color: #e0d9d8; /* Slight shade on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Back Button Styling (Common to Personal Details and Predictor, adjusted for placement) */
+.back-button {
+    position: absolute; /* Positioned relative to the container */
+    bottom: 40px; /* Distance from bottom */
+    left: 40px; /* Distance from left */
+    background: none;
+    border: none;
+    color: #f8f3f2; /* Matches sidebar text color */
+    font-size: 1.4em; /* Larger font */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    padding: 10px 15px; /* Makes clickable area larger */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(248, 243, 242, 0.1); /* Subtle hover background */
+}
+
+.back-button::before {
+    content: '←'; /* Left arrow symbol */
+    display: inline-block;
+    margin-right: 12px; /* Space between arrow and text */
+    font-size: 1.6em; /* Larger arrow */
+    line-height: 1; /* Aligns with text */
+}
+
+/* --- Personal Details Page Specific Styling --- */
+.personal-details-page, .flexibility-predictor-page {
+    position: relative; /* Needed for back-button absolute positioning */
+    background-color: #223d3c;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal-details-form-container, .flexibility-predictor-form-container {
+    background-color: #f8f3f2;
+    padding: 60px 70px; /* Consistent padding with login form */
+    border-radius: 15px; /* Consistent rounding */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 550px; /* Slightly wider for forms */
+    text-align: left; /* Aligns labels to left */
+}
+
+.personal-details-form-container h2, .flexibility-predictor-form-container h2 {
+    color: #223d3c;
+    margin-bottom: 40px; /* Consistent spacing */
+    font-weight: 700;
+    font-size: 2.5em; /* Larger heading */
+    text-align: center;
+    border-bottom: 2px solid #223d3c; /* Separator line */
+    padding-bottom: 15px; /* Space below line */
+    line-height: 1.2;
+}
+
+.personal-details-form-container .input-group,
+.flexibility-predictor-form-container .input-group {
+    margin-bottom: 30px; /* Space between input rows */
+    display: flex; /* Aligns label and input */
+    align-items: center;
+}
+
+.personal-details-form-container .input-group label,
+.flexibility-predictor-form-container .input-group label {
+    flex: 1; /* Label takes available space */
+    margin-right: 25px; /* More space between label and input */
+    font-weight: 700;
+    color: #223d3c;
+    font-size: 1.2em; /* Larger label font */
+}
+
+.personal-details-form-container .input-group input,
+.personal-details-form-container .input-group select,
+.flexibility-predictor-form-container .input-group input,
+.flexibility-predictor-form-container .input-group select {
+    flex: 2; /* Input/select takes more space */
+    padding: 16px 15px; /* Consistent padding */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Consistent rounding */
+    font-size: 1.1em;
+    background-color: #fff; /* Ensure white background */
+    color: #223d3c;
+}
+
+.personal-details-form-container .input-group select,
+.session-dashboard-page .input-row .input-group select,
+.flexibility-predictor-form-container .input-group select { /* Apply to all selects */
+    appearance: none; /* Remove default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23223d3c%22%20d%3D%22M287%2C197.6l-14.2%2C14.2l-123.6%2C-123.6L25.6%2C211.8L11.4%2C197.6l138.8%2C-138.8L287%2C197.6z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 18px center; /* Adjusted arrow position */
+    background-size: 16px; /* Larger arrow */
+    padding-right: 50px; /* Make space for custom arrow */
+}
+
+.personal-details-form-container .save-btn-wrapper {
+    text-align: center;
+    margin-top: 40px; /* Consistent spacing */
+}
+
+.personal-details-form-container .save-btn-wrapper .primary-btn {
+    width: auto; /* Override full width */
+    padding: 18px 60px; /* Specific padding for this button */
+    display: inline-block; /* Allows centering */
+}
+
+
+/* --- Session Dashboard Styling --- */
+.session-dashboard-page {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #f8f3f2;
+}
+
+.session-dashboard-page .sidebar {
+    width: 300px; /* Wider sidebar as per image */
+    background-color: #223d3c;
+    color: #f8f3f2;
+    padding: 40px 30px; /* Generous padding */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.3); /* Clearer shadow */
+    position: relative; /* Ensures back button is positioned relative to sidebar */
+    height: 100%; /* Make sidebar extend from top to bottom */
+    justify-content: flex-start; /* Aligns content from the top */
+}
+
+.session-dashboard-page .sidebar .username-display {
+    font-size: 2.2em; /* Larger username font */
+    font-weight: 700;
+    margin-bottom: 25px; /* Adjusted to move content up */
+    color: #f8f3f2;
+    text-align: center;
+    border-bottom: 2px solid #f8f3f2; /* Separator line below username */
+    padding-bottom: 15px; /* Space below line */
+    line-height: 1; /* Tighter line height */
+}
+
+.session-dashboard-page .sidebar .nav-button {
+    display: block;
+    width: 100%;
+    padding: 15px 0; /* Adjusted padding to move buttons higher */
+    margin-bottom: 15px; /* Adjusted to move content up */
+    background: none;
+    border: none;
+    color: #f8f3f2;
+    font-size: 1.2em; /* Slightly smaller font */
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    border-left: 6px solid transparent; /* Thicker border for active state */
+    padding-left: 15px; /* Initial padding for button text */
+}
+
+.session-dashboard-page .sidebar .nav-button:hover {
+    background-color: #3b5a58;
+    padding-left: 25px; /* More pronounced hover indent */
+}
+
+.session-dashboard-page .sidebar .nav-button.active {
+    border-left: 6px solid #f8f3f2;
+    background-color: #3b5a58;
+    padding-left: 25px;
+}
+
+/* Adjust back button for sidebar context */
+.session-dashboard-page .sidebar .back-button {
+    position: absolute; /* Positioned relative to the sidebar */
+    bottom: 40px; /* Aligned with other elements */
+    left: 30px; /* Aligned with sidebar padding */
+    width: calc(100% - 60px); /* Adjust width to fit sidebar padding */
+    justify-content: flex-start; /* Align arrow and text to left */
+    font-size: 1.3em; /* Consistent font size */
+    padding: 10px 0; /* Adjust padding if needed for sidebar button */
+}
+
+.session-dashboard-page .sidebar .back-button::before {
+    margin-right: 15px; /* More space for arrow */
+}
+
+.session-dashboard-page .main-content {
+    flex: 1;
+    padding: 40px; /* Reduced padding around content */
+    background-color: #f8f3f2;
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Ratio as per image */
+    grid-template-rows: auto 1fr;
+    gap: 30px; /* Reduced gap between grid areas */
+}
+
+.session-dashboard-page .main-content h2 {
+    grid-column: 1 / -1; /* Spans both columns */
+    color: #223d3c;
+    font-size: 3em; /* Large main heading */
+    font-weight: 700;
+    margin-bottom: 25px; /* Reduced space below heading */
+    text-align: center;
+}
+
+.session-dashboard-page .session-details-section {
+    grid-column: 1;
+    background-color: #f8f3f2;
+    padding-right: 30px; /* Reduced space before the divider */
+    border-right: 2px solid #dcdcdc; /* Subtle vertical divider */
+}
+
+.session-dashboard-page .input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px; /* Reduced space below the input row */
+    gap: 20px; /* Reduced space between individual inputs in the row */
+}
+
+.session-dashboard-page .input-row .input-group {
+    flex: 1; /* Distribute space equally */
+    position: relative;
+}
+
+.session-dashboard-page .input-row .input-group label {
+    display: block;
+    margin-bottom: 8px; /* Reduced space between label and input */
+    font-weight: 700;
+    color: #223d3c;
+    font-size: 1.1em;
+}
+
+.session-dashboard-page .input-row .input-group input[type="text"],
+.session-dashboard-page .input-row .input-group input[type="date"],
+.session-dashboard-page .input-row .input-group select {
+    width: 100%;
+    padding: 14px 15px; /* Slightly reduced input padding */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Consistent input rounding */
+    font-size: 1.1em;
+    background-color: #fff;
+    color: #223d3c;
+}
+
+.session-dashboard-page .session-actions {
+    display: flex;
+    gap: 20px; /* Reduced space between start/stop buttons */
+    margin-bottom: 30px; /* Reduced space below buttons */
+}
+
+.session-dashboard-page .session-actions .btn {
+    flex: 1; /* Buttons take equal space */
+    margin-top: 0; /* Override default margin */
+    padding: 15px; /* Specific padding for these smaller buttons */
+    font-size: 1.1em;
+}
+
+.session-dashboard-page .measurement-display {
+    margin-bottom: 30px; /* Reduced space below measurements */
+    padding-top: 20px; /* Reduced padding above this section */
+    border-top: 1px solid #e0e0e0; /* Subtle separator line */
+}
+
+.session-dashboard-page .measurement-display .input-group {
+    margin-bottom: 18px; /* Reduced space between measurement lines */
+    display: flex;
+    align-items: center;
+}
+
+.session-dashboard-page .measurement-display .input-group label {
+    flex: 1.5; /* Label takes more space to align values */
+    font-weight: 700;
+    color: #223d3c;
+    font-size: 1.1em;
+}
+
+.session-dashboard-page .measurement-display .input-group span {
+    flex: 1; /* Value takes remaining space */
+    padding: 14px 15px; /* Slightly reduced display padding */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 1.1em;
+    color: #223d3c;
+    text-align: right; /* Values align right in their box */
+}
+
+.session-dashboard-page .measurement-display .input-group:first-child label {
+    flex: none; /* "Angle Measurements" label should not flex */
+    font-size: 1.2em; /* Slightly larger for section title */
+    margin-bottom: 0; /* No bottom margin needed for this specific label */
+}
+.session-dashboard-page .measurement-display .input-group:first-child span {
+    display: none; /* Hide the span for "Angle Measurements" as it's just a label */
+}
+
+.session-dashboard-page .save-session-btn-wrapper {
+    text-align: center;
+    margin-top: 20px; /* Reduced space above save button */
+}
+
+.session-dashboard-page .save-session-btn-wrapper .primary-btn {
+    width: auto;
+    padding: 18px 60px; /* Consistent button padding */
+    display: inline-block;
+}
+
+.session-dashboard-page .suggestions-section {
+    grid-column: 2;
+    background-color: #f8f3f2;
+    padding-left: 30px; /* Reduced padding to the left of the separator */
+    display: flex;
+    flex-direction: column;
+}
+
+.session-dashboard-page .suggestions-section h3 {
+    color: #223d3c;
+    font-size: 1.8em; /* Consistent sub-heading size */
+    font-weight: 700;
+    margin-bottom: 20px; /* Reduced space below heading */
+    text-align: center;
+}
+
+.session-dashboard-page .suggested-exercises-content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px; /* Generous padding */
+    min-height: 250px; /* Increased min-height for content area */
+    flex: 1; /* Takes available vertical space */
+    margin-bottom: 30px; /* Reduced space below exercises */
+    color: #223d3c;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center placeholder text */
+    text-align: center;
+}
+
+.session-dashboard-page .angle-plot-section {
+    flex: 1; /* Takes remaining vertical space */
+    display: flex;
+    flex-direction: column;
+}
+
+.session-dashboard-page .angle-plot-section h3 {
+    color: #223d3c;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 20px; /* Reduced space below heading */
+    text-align: center;
+}
+
+.session-dashboard-page .angle-plot-placeholder {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    flex: 1; /* Occupies all available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+/* Flexibility Predictor Page styling */
+/* This rule has been kept but the empty curly braces have been removed to fix the warning. */
+.flexibility-predictor-form-container h2 {
+    color: #223d3c;
+    margin-bottom: 40px; /* Consistent spacing */
+    font-weight: 700;
+    font-size: 2.5em; /* Larger heading */
+    text-align: center;
+    border-bottom: 2px solid #223d3c; /* Separator line */
+    padding-bottom: 15px; /* Space below line */
+    line-height: 1.2;
+}
+
+.flexibility-predictor-form-container #predictedFlexibility {
+    border: none;
+    background-color: transparent;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #223d3c;
+    padding: 0;
+    text-align: right;
+    flex: 2;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .login-page .left-panel {
+        padding: 30px;
+        /* Removed padding-left to keep centered for smaller screens */
+    }
+    .login-page .app-title {
+        font-size: 3.5em;
+    }
+    .login-page .app-tagline {
+        font-size: 1.3em;
+        margin-bottom: 5px;
+    }
+    .login-page .app-subtitle {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+    }
+    .login-page .form-container,
+    .personal-details-form-container,
+    .flexibility-predictor-form-container {
+        padding: 40px 50px;
+    }
+    .login-page .form-container h2,
+    .personal-details-form-container h2,
+    .flexibility-predictor-form-container h2 {
+        font-size: 2em;
+    }
+    .session-dashboard-page .main-content {
+        gap: 25px; /* Reduced for a tighter fit */
+        padding: 30px; /* Reduced padding */
+    }
+    .session-dashboard-page .sidebar {
+        width: 250px;
+        padding: 30px 20px;
+    }
+    .session-dashboard-page .sidebar .nav-button {
+        font-size: 1.1em;
+        padding: 15px 0;
+        margin-bottom: 15px; /* Tighter spacing */
+    }
+    .session-dashboard-page .main-content h2 {
+        font-size: 2.5em;
+    }
+    .session-dashboard-page .session-actions .btn {
+        padding: 12px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 900px) {
+    .login-page {
+        flex-direction: column;
+    }
+
+    .login-page .left-panel,
+    .login-page .right-panel {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+        /* Left panel will naturally center with align-items: center */
+    }
+
+    .session-dashboard-page {
+        flex-direction: column;
+    }
+
+    .session-dashboard-page .sidebar {
+        width: 100%;
+        height: auto; /* Allow height to adjust for row layout */
+        padding: 25px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .session-dashboard-page .sidebar .username-display {
+        width: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .session-dashboard-page .sidebar .nav-button {
+        width: auto;
+        flex-grow: 1;
+        text-align: center;
+        padding: 10px 15px;
+        margin-bottom: 0;
+        border-left: none;
+        border-bottom: 4px solid transparent;
+    }
+
+    .session-dashboard-page .sidebar .nav-button:hover {
+        padding-left: 15px;
+        background-color: #3b5a58;
+    }
+    .session-dashboard-page .sidebar .nav-button.active {
+        border-left: none;
+        border-bottom: 4px solid #f8f3f2;
+        padding-left: 15px;
+    }
+
+    .session-dashboard-page .sidebar .back-button {
+        position: static; /* Remove absolute positioning for small screens in sidebar */
+        margin-top: 20px; /* Space above it */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .session-dashboard-page .main-content {
+        grid-template-columns: 1fr; /* Single column layout */
+        padding: 30px;
+        gap: 20px; /* Reduced gap for a tighter mobile layout */
+    }
+
+    .session-dashboard-page .session-details-section {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 2px solid #ccc; /* Add bottom border for separation */
+        padding-bottom: 25px; /* Reduced padding for mobile */
+    }
+
+    .session-dashboard-page .suggestions-section {
+        padding-left: 0;
+    }
+
+    .personal-details-form-container,
+    .flexibility-predictor-form-container {
+        padding: 40px 30px; /* Adjust padding for smaller screens */
+        max-width: 400px; /* Smaller max width */
+    }
+
+    .personal-details-form-container .input-group,
+    .flexibility-predictor-form-container .input-group {
+        flex-direction: column; /* Stack label and input */
+        align-items: flex-start; /* Align labels to start */
+        margin-bottom: 20px;
+    }
+
+    .personal-details-form-container .input-group label,
+    .flexibility-predictor-form-container .input-group label {
+        margin-right: 0;
+        margin-bottom: 8px; /* Space below label */
+    }
+
+    .flexibility-predictor-form-container #predictedFlexibility {
+        text-align: left; /* Align to left when stacked */
+        width: 100%; /* Take full width */
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Smaller base font for very small screens */
+    }
+    .login-page .app-title {
+        font-size: 3em;
+    }
+    .login-page .app-tagline {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+    .login-page .app-subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .login-page .form-container {
+        padding: 30px 20px; /* Even tighter padding */
+    }
+    .login-page .form-container h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .login-page .input-group label,
+    .login-page .input-group input,
+    .btn {
+        font-size: 1em; /* Smaller font for inputs and buttons */
+        padding: 12px;
+    }
+    .session-dashboard-page .input-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .session-dashboard-page .main-content {
+        padding: 20px;
+    }
+    .session-dashboard-page .main-content h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    .session-dashboard-page .sidebar .nav-button {
+        font-size: 1em;
+        padding: 8px 10px;
+    }
+    .back-button {
+        font-size: 1.1em;
+        bottom: 20px;
+        left: 20px;
+    }
+    .personal-details-form-container h2, .flexibility-predictor-form-container h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .personal-details-form-container .input-group label,
+    .flexibility-predictor-form-container .input-group label {
+        font-size: 1em;
+    }
+    .personal-details-form-container .input-group input,
+    .personal-details-form-container .input-group select,
+    .flexibility-predictor-form-container .input-group input,
+    .flexibility-predictor-form-container .input-group select {
+        font-size: 1em;
+        padding: 12px 10px;
+    }
+    .personal-details-form-container .save-btn-wrapper .primary-btn {
+        padding: 12px 40px;
+    }
+}

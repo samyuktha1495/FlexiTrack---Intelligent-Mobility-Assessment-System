@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexi Track</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="appContainer">
+        <div id="loginPage" class="container login-page">
+            <div class="left-panel">
+                <h1 class="app-title">Flexi Track</h1>
+                <p class="app-tagline">Track. Improve. Recover.</p>
+                <p class="app-subtitle">Your Personalized Flexibility Companion.</p>
+            </div>
+            <div class="right-panel">
+                <div class="form-container">
+                    <h2>Sign In or Create Account</h2>
+                    <div class="input-group">
+                        <label for="username-login">Username :</label>
+                        <input type="text" id="username-login">
+                    </div>
+                    <div class="input-group">
+                        <label for="email-login">Email :</label>
+                        <input type="email" id="email-login">
+                    </div>
+                    <button class="btn primary-btn" id="loginBtn">Login</button>
+                    <button class="btn secondary-btn" id="createAccountBtn">Create Account</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="personalDetailsPage" class="container personal-details-page page-hidden">
+            <div class="personal-details-form-container">
+                <h2>Personal Details</h2>
+                <div class="input-group">
+                    <label for="age">Age :</label>
+                    <input type="number" id="age" min="1" max="120">
+                </div>
+                <div class="input-group">
+                    <label for="gender">Gender :</label>
+                    <select id="gender">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="medicalIssues">Medical issues :</label>
+                    <select id="medicalIssues">
+                        <option value="None">None</option>
+                        <option value="JointCare">JointCare</option>
+                        <option value="Rehab">Rehab</option>
+                    </select>
+                </div>
+                <div class="save-btn-wrapper">
+                    <button class="btn primary-btn" id="saveDetailsBtn">Save Details</button>
+                </div>
+            </div>
+            <button class="back-button" id="backToLoginOrDashboardBtn">Back</button>
+        </div>
+
+        <div id="sessionDashboardPage" class="container session-dashboard-page page-hidden">
+            <div class="sidebar">
+                <div class="username-display" id="dashboardUsername">Username</div>
+                <button class="nav-button" id="sidebarPersonalDetailsBtn">Personal Details</button>
+                <button class="nav-button" id="sidebarProgressTrackerBtn">Progress Tracker</button>
+                <button class="nav-button" id="sidebarFlexibilityPredictorBtn">Flexibility Predictor</button>
+                <button class="back-button" id="backToLoginFromDashboardBtn">Back</button>
+            </div>
+            <div class="main-content">
+                <h2>Session Dashboard</h2>
+                <div class="session-details-section">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="sessionNumber">Session number :</label>
+                            <input type="text" id="sessionNumber">
+                        </div>
+                        <div class="input-group">
+                            <label for="sessionDate">Date:</label>
+                            <input type="date" id="sessionDate">
+                        </div>
+                        <div class="input-group">
+                            <label for="painLevel">Pain level :</label>
+                            <select id="painLevel">
+                                <option value="None">None</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Severe">Severe</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="session-actions">
+                        <button type="button" class="btn primary-btn" id="startSessionBtn">Start Session</button>
+                        <button type="button" class="btn secondary-btn" id="stopSessionBtn">Stop Session</button>
+                    </div>
+                    <div class="measurement-display">
+                        <div class="input-group">
+                            <label>Angle Measurements :</label>
+                        </div>
+                        <div class="input-group">
+                            <label>Minimum Knee Angle :</label>
+                            <span id="minKneeAngle">0°</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Max Leg Separation Angle :</label>
+                            <span id="maxLegSeparation">0°</span>
+                        </div>
+                        <!-- New measurement displays added below -->
+                        <div class="input-group">
+                            <label>Max Ankle Dorsi/Plantarflex Angle :</label>
+                            <span id="maxAnkleDorsiflexionPlantarflexionAngle">0°</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Max Ankle Inversion/Eversion Angle :</label>
+                            <span id="maxAnkleInversionEversionAngle">0°</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Flexibility Score:</label>
+                            <span id="flexibilityScore">0</span>
+                        </div>
+                    </div>
+                    <div class="save-session-btn-wrapper">
+                        <button type="button" class="btn primary-btn" id="saveSessionBtn">Save Session</button>
+                    </div>
+                </div>
+                <div class="suggestions-section">
+                    <h3>Suggested Exercises :</h3>
+                    <div class="suggested-exercises-content">
+                        <p>Exercises will be suggested here based on ML model output.</p>
+                    </div>
+                    <div class="angle-plot-section">
+                        <h3>Angle plot :</h3>
+                        <div class="angle-plot-placeholder">
+                            <p>Graph PNG will be displayed here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="flexibilityPredictorPage" class="container flexibility-predictor-page page-hidden">
+            <div class="flexibility-predictor-form-container">
+                <h2>Flexibility Predictor</h2>
+                <div class="input-group">
+                    <label for="currentFlexibilityScore">Current Flexibility Score :</label>
+                    <select id="currentFlexibilityScore">
+                        <option value="">Select Score</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="numberOfSessions">Number of Sessions :</label>
+                    <input type="number" id="numberOfSessions" min="1">
+                </div>
+                <div class="input-group">
+                    <label for="predictedFlexibility">Predicted Flexibility :</label>
+                    <span id="predictedFlexibility">0</span>
+                </div>
+            </div>
+            <button class="back-button" id="backToDashboardFromPredictorBtn">Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
